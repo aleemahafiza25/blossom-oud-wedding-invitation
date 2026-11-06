@@ -1,0 +1,94 @@
+
+.closing-section {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 371px;
+  margin: 0 auto;
+  background: transparent;
+  overflow: hidden;
+}
+
+.closing-floral-art {
+  position: absolute;
+  top: 45px;
+  left: 43px;
+  width: 213px;
+  height: 159px;
+  object-fit: contain;
+  transform-origin: center;
+  animation: closing-floral-sway 2.1s ease-in-out infinite alternate;
+}
+
+.closing-message {
+  font-family:"NewFonts" ;
+  position: absolute;
+  top: 196px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #866739;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.closing-flower {
+  position: absolute;
+  top: 290px;
+  left: 134px;
+  width: 50px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.closing-decor-line {
+  position: absolute;
+  top: 260px;
+  left: 77px;
+  width: 165px;
+  height: 30px;
+  object-fit: contain;
+}
+
+@keyframes closing-floral-sway {
+  from {
+    transform: translateX(0) rotate(0deg);
+  }
+  to {
+    transform: translateX(10px) rotate(-13deg);
+  }
+}
+
+@media (min-width: 321px) {
+  .closing-section {
+    max-width: 100%;
+  }
+
+  .closing-floral-art,
+  .closing-message,
+  .closing-flower,
+  .closing-decor-line {
+    left: auto;
+  }
+
+  .closing-floral-art {
+    left: calc(50% - 117px);
+  }
+
+  .closing-message {
+    left: 0;
+  }
+
+  .closing-flower {
+    left: calc(50% - 26px);
+  }
+
+  .closing-decor-line {
+    left: calc(50% - 83px);
+  }
+}
+.closing-message {
+  font-family:"NewFonts" ;
+}

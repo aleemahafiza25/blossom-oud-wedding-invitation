@@ -1,0 +1,1307 @@
+
+/* =========================================
+   1. FONTS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+@font-face {
+  font-family: "NewFonts";
+  src: url("/fonts/ImperialScript-Regul.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =========================================
+   2. GLOBAL STYLES
+========================================= */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #4f3c2b;
+  background: #f9e6d4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  background: transparent;
+}
+
+
+/* =========================================
+   3. MAIN INVITATION APP
+========================================= */
+
+.invitation-app {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: clip;
+}
+
+
+/* =========================================
+   4. FIXED BACKGROUND
+========================================= */
+
+.fixed-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #f9e6d4;
+}
+
+.fixed-background video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.4;
+}
+
+
+/* =========================================
+   5. INVITATION CONTENT
+========================================= */
+
+.invitation-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   6. FIRST INVITATION PAGE
+========================================= */
+
+.invitation-hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 782px;
+  min-height: 782px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  text-align: center;
+  color: #866739;
+}
+
+
+/* =========================================
+   7. HERO ARTWORK
+========================================= */
+
+.hero-artwork {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  width: 440px;
+  height: 782px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 78%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 78%,
+    transparent 100%
+  );
+}
+
+.hero-artwork video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================================
+   8. HERO DECORATIVE LINE
+========================================= */
+
+.hero-top-line {
+  position: absolute;
+  z-index: 1;
+  top: 90px;
+  left: 50%;
+  width: 254px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: #866739;
+  opacity: 0.6;
+}
+
+
+/* =========================================
+   9. HERO TEXT CONTAINER
+========================================= */
+
+.hero-copy {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  color: #866739;
+  pointer-events: none;
+}
+
+
+/* =========================================
+   10. BRIDE AND GROOM NAMES
+========================================= */
+
+.hero-names {
+  position: absolute;
+  top: 350px;
+  left: 50%;
+  width: 100%;
+  height: 240px;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
+  color: #8b693e;
+  text-align: center;
+
+  font-family: "ImperialScript", cursive;
+  font-size: 59px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+
+/* Individual names */
+
+.hero-name {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+
+  font-family: "NewFonts", cursive;
+  font-weight: 300;
+  font-size: 59px;
+  font-style: normal;
+}
+
+.hero-name-amira {
+  top: 0;
+}
+
+
+/* Ampersand */
+
+.hero-ampersand {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 100%;
+
+  font-family: "NewFonts", cursive;
+  font-weight: 300;
+  font-size: 28px;
+  font-style: normal;
+  line-height: 25px;
+}
+
+
+/* Groom's name */
+
+.hero-name-yusuf {
+  top: 105px;
+}
+
+
+/* =========================================
+   11. DATE AND TIME
+========================================= */
+
+.hero-details {
+  position: absolute;
+  top: 550px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #8b693e;
+}
+
+.hero-date,
+.hero-time {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  /* font-weight: 200; */
+  line-height: 1.4;
+  color: #8b693e;
+}
+
+.hero-time {
+  margin-top: 4px;
+}
+
+
+/* =========================================
+   12. NEXT INVITATION PAGES
+========================================= */
+
+.invitation-page {
+  position: relative;
+  min-height: 680px;
+  padding: 90px 26px;
+  background: rgba(249, 230, 212, 0.18);
+  text-align: center;
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.page-inner h2 {
+  margin: 18px 0 32px;
+  color: #755538;
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.page-inner p:not(.section-eyebrow) {
+  max-width: 370px;
+  margin: 0 auto 22px;
+  color: #5d4a38;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.section-eyebrow {
+  margin: 0 0 26px;
+  color: #9b7954;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+}
+
+.next-page {
+  min-height: 750px;
+  background: rgba(249, 230, 212, 0.18);
+}
+
+
+/* =========================================
+   13. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+
+  .invitation-hero {
+    height: 782px;
+    min-height: 782px;
+  }
+
+  .hero-artwork {
+    width: 440px;
+  }
+
+  .hero-names {
+    top: 350px;
+    font-size: 59px;
+  }
+
+  .hero-name {
+    font-size: 59px;
+  }
+
+  .hero-ampersand {
+    top: 65px;
+    font-size: 28px;
+  }
+
+  .hero-name-yusuf {
+    top: 105px;
+  }
+
+  .hero-details {
+    top: 480px;
+  }
+
+  .invitation-page {
+    padding: 75px 24px;
+  }
+
+  .page-inner h2 {
+    font-size: 29px;
+  }
+}
+
+
+/* =========================================
+   14. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.hero-ampersand {
+  top: 40px;
+}
+
+.hero-name-yusuf {
+  top: 75px;
+}
+
+
+
+/* =========================================
+   PAGE 2: FORMAL INVITATION
+========================================= */
+
+.formal-invitation-page {
+  position: relative;
+  width: 100%;
+  min-height: 795px;
+  padding-top: 15px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.formal-invitation-frame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 780px;
+  margin: 0 auto;
+}
+
+.formal-frame-image {
+  position: absolute;
+  top: 43px;
+  left: -18px;
+  width: 356px;
+  height: 734px;
+  object-fit: fill;
+}
+
+.formal-top-ornament {
+  position: absolute;
+  top: 159px;
+  left: 54px;
+  width: 209px;
+  height: 61px;
+  object-fit: contain;
+}
+
+.formal-arabic-text {
+  position: absolute;
+  top: 285px;
+  left: 38px;
+  width: 245px;
+  min-height: 348px;
+  color: #866739;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.formal-venue {
+  position: absolute;
+  top: 640px;
+  left: 28px;
+  width: 265px;
+  margin: 0;
+  color: #876836;
+    font-family: "NewFonts", cursive;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.formal-bottom-ornament {
+  position: absolute;
+  top: 680px;
+  left: 53px;
+  width: 217px;
+  height: 52px;
+  object-fit: contain;
+}
+
+@media (min-width: 481px) {
+  .formal-invitation-frame {
+    width: 320px;
+  }
+}
+
+.formal-bismillah-flower {
+  position: absolute;
+  top: 235px;
+  left: 50%;
+  width: 40px;
+  height: 39px;
+  transform: translateX(-50%);
+  object-fit: contain;
+  z-index: 3;
+}
+
+
+/* =========================================
+   PAGE 3: COUNTDOWN
+========================================= */
+
+.countdown-section {
+  position: relative;
+  width: 100%;
+  height: 263px;
+  min-height: 263px;
+  padding-top: 15px;
+  overflow: hidden;
+  background: transparent;
+  text-align: center;
+}
+
+.countdown-heading {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 100%;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #866739;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 1.55;
+  white-space: nowrap;
+}
+
+.countdown-container {
+  position: absolute;
+  top: 153px;
+  left: 50%;
+  width: calc(100% - 30px);
+  max-width: 470px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.countdown-item {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.countdown-number {
+  display: block;
+  font-family: "Ovo", serif;
+  font-size: 45px;
+  font-weight: 400;
+  color: #866739;
+  line-height: 1;
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 8px;
+  color: #866739;
+  font-family: "Ovo", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.countdown-separator {
+  margin-top: -40px;
+  color: #866739;
+  font-family: "Ovo", serif;
+  font-size: 52px;
+  line-height: 1;
+}
+
+@media (max-width: 390px) {
+  .countdown-heading {
+    font-size: 34px;
+  }
+
+  .countdown-number {
+    font-size: 38px;
+  }
+
+  .countdown-label {
+    font-size: 15px;
+  }
+
+  .countdown-separator {
+    font-size: 42px;
+  }
+}
+
+.countdown-ornament {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  width: 139px;
+  height: auto;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+
+/* =========================================
+   PAGE 4: EVENT TIMELINE
+========================================= */
+
+.timeline-section {
+  position: relative;
+  width: 100%;
+  height: 504px;
+  min-height: 504px;
+  padding-top: 15px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.timeline-heading {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 560px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #866739;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.timeline-divider {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  width: 139px;
+  height: 28px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+.timeline-content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 320px;
+  height: 489px;
+  transform: translateX(-50%);
+}
+
+.timeline-vertical-line {
+  position: absolute;
+  top: 201px;
+  left: 159px;
+  width: 1px;
+  height: 258px;
+  background: #af9b6a;
+}
+
+.timeline-main-flower {
+  position: absolute;
+  top: 181px;
+  left: 133px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  z-index: 3;
+  transition: none;
+  will-change: transform;
+}
+
+.timeline-event {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-event:nth-of-type(2) {
+  top: 182px;
+}
+
+.timeline-event:nth-of-type(3) {
+  top: 264px;
+}
+
+.timeline-event:nth-of-type(4) {
+  top: 352px;
+}
+
+.timeline-event:nth-of-type(5) {
+  top: 429px;
+}
+
+.timeline-time {
+  position: absolute;
+  left: 23px;
+  width: 75px;
+  color: #866739;
+  font-family: "Ovo", serif;
+  font-size: 30px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.timeline-title {
+  position: absolute;
+  left: 203px;
+  width: 94px;
+  color: #866739;
+  font-family: "Ovo", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.timeline-small-flower {
+  position: absolute;
+  left: 153px;
+  width: 14px;
+  height: 16px;
+  object-fit: contain;
+}
+
+@media (min-width: 481px) {
+  .timeline-content {
+    width: 320px;
+  }
+}
+
+@media (max-width: 390px) {
+  .timeline-heading {
+    font-size: 35px;
+  }
+
+  .timeline-time {
+    font-size: 28px;
+  }
+
+  .timeline-title {
+    font-size: 19px;
+  }
+}
+
+
+
+/* =========================================
+   VENUE SECTION
+========================================= */
+
+.venue-section {
+  position: relative;
+  width: 100%;
+  height: 541px;
+  min-height: 541px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.venue-heading {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 560px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #866739;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.venue-divider {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  width: 139px;
+  height: 28px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+.venue-pin {
+  position: absolute;
+  top: 151px;
+  left: calc(50% - 18px);
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.venue-name {
+  position: absolute;
+  top: 203px;
+  left: 50%;
+  width: 560px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #454545;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.venue-address {
+  position: absolute;
+  top: 235px;
+  left: 50%;
+  width: 560px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #2a2a2a;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.venue-artwork {
+  position: absolute;
+  top: 285px;
+  left: 50%;
+  width: 420px;
+  height: 257px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+
+.timeline-main-flower {
+  position: absolute;
+  top: 181px;
+  left: 133px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  z-index: 3;
+  transform-origin: center center;
+  transition: none;
+  will-change: transform;
+}
+
+
+
+/* =========================================
+   DRESS CODE SECTION
+========================================= */
+
+.dress-code-section {
+  position: relative;
+  width: 100%;
+  height: 594px;
+  min-height: 594px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.dress-code-heading {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 560px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #866739;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.dress-code-divider {
+  position: absolute;
+  top: 109px;
+  left: 50%;
+  width: 139px;
+  height: 28px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+.dress-code-description {
+  position: absolute;
+  top: 342px;
+  left: 50%;
+  width: 335px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: rgb(42, 42, 42);
+  font-family: sans-serif;
+  font-size: 21px;
+  font-weight: 100;
+  line-height: 1.2;
+  text-align: center;
+  font-size:21px;
+
+}
+
+.palette-heading {
+  position: absolute;
+  top: 446px;
+  left: 50%;
+  width: 560px;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #866739;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.palette-colors {
+  position: absolute;
+  top: 506px;
+  left: 50%;
+  width: 320px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.palette-circle {
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  border: 1px solid #fffaf8;
+  border-radius: 50%;
+}
+
+.dress-code-artwork {
+  position: absolute;
+  top: 154px;
+  left: 50%;
+  width: 236px;
+  height: 176px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+@media (max-width: 390px) {
+  .dress-code-description {
+    width: calc(100% - 40px);
+    font-size: 20px;
+  }
+}
+
+
+.dress-guidelines-section {
+  position: relative;
+  width: 100%;
+  height: 249px;
+  min-height: 249px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.dress-guideline {
+  position: absolute;
+  left: 50%;
+  width: 301px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.dress-guideline:first-child {
+  top: 0;
+}
+
+.dress-guideline:last-child {
+  top: 131px;
+}
+
+.dress-guideline h3 {
+  margin: 0;
+  color: #866739;
+  font-family: "NewFonts", Arial, sans-serif;
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.dress-guideline p {
+  margin: 3px 0 0;
+  color: #2a2a2a;
+  font-family:   Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@media (max-width: 390px) {
+  .dress-guideline {
+    width: calc(100% - 20px);
+  }
+}
+
+
+
+
+/* HERO NAMES ENTRANCE ANIMATION */
+
+.hero-name-amira,
+.hero-ampersand,
+.hero-name-yusuf,
+.hero-date,
+.hero-time {
+  opacity: 0;
+  animation: heroTextEntrance 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-name-amira {
+  animation-delay: 0.3s;
+}
+
+.hero-ampersand {
+  animation-delay: 0.8s;
+}
+
+.hero-name-yusuf {
+  animation-delay: 1.3s;
+}
+
+.hero-date {
+  animation-delay: 1.8s;
+}
+
+.hero-time {
+  animation-delay: 2.2s;
+}
+
+@keyframes heroTextEntrance {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-name-amira,
+  .hero-ampersand,
+  .hero-name-yusuf,
+  .hero-date,
+  .hero-time {
+    opacity: 1;
+    animation: none;
+    translate: none;
+  }
+}
+
+
+/* =================================
+   LANGUAGE SELECTOR
+================================= */
+
+.language-selector {
+  position: fixed;
+  top: 22px;
+  left: 20px;
+  z-index: 99999;
+  font-family: inherit;
+  color: #87651f;
+}
+
+/* Main button */
+
+.language-trigger {
+  min-width: 178px;
+  height: 66px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+
+  background: rgba(249, 239, 216, 0.94);
+  border: 1px solid rgba(177, 145, 82, 0.32);
+  border-radius: 40px;
+
+  color: #87651f;
+  cursor: pointer;
+
+  transition: background 0.25s ease;
+}
+
+.language-trigger:hover {
+  background: #f8edda;
+}
+
+.language-globe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.language-trigger-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.language-chevron {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.language-chevron.is-open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+
+.language-dropdown {
+  width: 272px;
+  margin-top: 14px;
+  padding: 10px;
+
+  background: rgba(249, 239, 216, 0.97);
+  border: 1px solid rgba(177, 145, 82, 0.22);
+  border-radius: 24px;
+
+  box-shadow: 0 15px 40px rgba(91, 69, 35, 0.12);
+
+  animation: languageDropdownIn 0.25s ease both;
+}
+
+@keyframes languageDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Individual options */
+
+.language-option {
+  width: 100%;
+  min-height: 68px;
+  padding: 10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  border: none;
+  border-radius: 15px;
+  background: transparent;
+
+  color: #76634b;
+  cursor: pointer;
+  text-align: left;
+
+  transition: background 0.2s ease;
+}
+
+.language-option:hover {
+  background: rgba(222, 208, 177, 0.55);
+}
+
+.language-option.active {
+  background: #dfd1b1;
+  color: #87651f;
+}
+
+.language-option-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.language-option-native {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #98876b;
+  white-space: nowrap;
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 480px) {
+  .language-selector {
+    top: 16px;
+    left: 16px;
+  }
+
+  .language-trigger {
+    min-width: 174px;
+    height: 60px;
+    padding: 0 17px;
+  }
+
+  .language-dropdown {
+    width: 272px;
+  }
+}
+
+
+
+/* FORMAL INVITATION: RESPONSIVE TEXT AND VENUE POSITION */
+
+.formal-invitation-copy {
+  position: absolute;
+  top: 285px;
+  left: 28px;
+  width: 265px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.formal-invitation-copy .formal-arabic-text {
+  position: static;
+  width: 245px;
+  min-height: 0;
+  height: auto;
+  color: #866739;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.formal-invitation-copy .formal-venue {
+  position: static;
+  width: 100%;
+  margin: 14px 0 0;
+  transform: none;
+  color: #876836;
+  font-family: "NewFonts", cursive;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+}
+
+.formal-invitation-copy .formal-arabic-text {
+  position: static;
+  width: 245px;
+  min-height: 0;
+  height: auto;
+  color: #866739;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: center;
+}
+
+.music-toggle {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 99999;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(177, 145, 82, 0.4);
+  border-radius: 50%;
+  background: rgba(249, 239, 216, 0.95);
+  color: #87651f;
+  font-family: serif;
+  font-size: 27px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(91, 69, 35, 0.15);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.08);
+  background: #f8edda;
+}
+
+.music-toggle.is-playing {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(91, 69, 35, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(135, 101, 31, 0.3);
+  }
+}

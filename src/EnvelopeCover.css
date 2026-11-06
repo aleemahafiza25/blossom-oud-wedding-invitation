@@ -1,0 +1,285 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+.envelope-page {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  background: #f8f3e9;
+}
+
+.envelope-page.is-opened {
+  background: transparent;
+  pointer-events: none;
+}
+
+.envelope-scene {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 850px;
+  min-height: 850px;
+  overflow: hidden;
+  background: #f8f3e9;
+}
+
+.envelope-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 850px;
+  overflow: hidden;
+  background: #f8f3e9;
+}
+
+/* All four layers use the same centered 320px coordinate system. */
+.envelope-layer {
+  position: absolute;
+  pointer-events: none;
+  transition:
+    transform 2s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 500ms ease;
+}
+
+.envelope-layer img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* RIGHT WING: original mobile values */
+.layer-right {
+  z-index: 3;
+  top: 83px;
+  left: calc(50% - 160px - 75px);
+  width: 856px;
+  height: 684px;
+}
+
+.layer-right img {
+  transform: rotate(90deg);
+}
+
+/* LEFT WING: original mobile values */
+.layer-left {
+  z-index: 3;
+  top: 105px;
+  left: calc(50% - 160px - 475px);
+  width: 856px;
+  height: 640px;
+}
+
+.layer-left img {
+  transform: rotate(270deg);
+}
+
+/* BOTTOM FLAP: original mobile values */
+.layer-bottom {
+  z-index: 4;
+  top: 221px;
+  left: calc(50% - 160px - 247px);
+  width: 815px;
+  height: 787px;
+}
+
+.layer-bottom img {
+  transform: rotate(180deg);
+}
+
+/* TOP FLAP: its own original image */
+.layer-top {
+  z-index: 5;
+  top: -99px;
+  left: calc(50% - 160px - 244px);
+  width: 807px;
+  height: 569px;
+}
+
+/* Wax seal: centered on the original artboard */
+.envelope-seal {
+  position: absolute;
+  z-index: 8;
+  top: 310px;
+  left: calc(50% - 160px + 80px);
+  width: 160px;
+  height: 160px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform-origin: center;
+  transition:
+    transform 1.5s ease 1s,
+    opacity 1.5s ease 1s;
+}
+
+.envelope-seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.envelope-seal:focus-visible {
+  outline: 2px solid #9c7539;
+  outline-offset: 4px;
+}
+
+/* Arabic opening instruction */
+.envelope-instruction {
+  position: absolute;
+  z-index: 9;
+  top: 468px;
+  left: calc(50% - 160px + 52px);
+  width: 217px;
+  margin: 0;
+  color: #866739;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: center;
+  transition: opacity 500ms ease;
+}
+
+/* Gold decorative line */
+.envelope-ornament {
+  position: absolute;
+  z-index: 9;
+  top: 510px;
+  left: calc(50% - 160px + 66px);
+  width: 188px;
+  height: 45px;
+  object-fit: fill;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+
+/* =========================================
+   REFERENCE-STYLE ENVELOPE ANIMATION
+   ========================================= */
+
+/* Side wings: begin after a 2.5s delay */
+.layer-left,
+.layer-right {
+  transition:
+    transform 2s cubic-bezier(0.65, 0, 0.35, 1) 2.5s,
+    opacity 500ms ease 4.5s;
+}
+
+/* Top and bottom flaps: begin after a 2.5s delay */
+.layer-top,
+.layer-bottom {
+  transition:
+    transform 1.5s cubic-bezier(0.65, 0, 0.35, 1) 2.5s;
+}
+
+/* Wax seal: starts after 1 second */
+.envelope-seal {
+  transition:
+    transform 1.5s ease 1s,
+    opacity 1.5s ease 1s;
+}
+
+/* Instructions fade immediately */
+.envelope-instruction,
+.envelope-ornament {
+  transition: opacity 1.5s ease;
+}
+
+/* Opening positions */
+.is-open .layer-right {
+  transform: translateX(559px);
+  opacity: 0;
+}
+
+.is-open .layer-left {
+  transform: translateX(-559px);
+  opacity: 0;
+}
+
+.is-open .layer-bottom {
+  transform: translateY(606px);
+}
+
+.is-open .layer-top {
+  transform: translateY(-430px);
+}
+
+.is-open .envelope-seal {
+  transform: scale(1.22);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.is-open .envelope-instruction,
+.is-open .envelope-ornament {
+  opacity: 0;
+}
+
+/* Keep the established overlap order */
+.layer-left,
+.layer-right {
+  z-index: 2;
+}
+
+.layer-bottom {
+  z-index: 4;
+}
+
+.layer-top {
+  z-index: 5;
+}
+
+.envelope-seal {
+  z-index: 10;
+}
+
+.envelope-instruction,
+.envelope-ornament {
+  z-index: 11;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .envelope-layer,
+  .envelope-seal,
+  .envelope-instruction,
+  .envelope-ornament {
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}
+
+
+
+/* Reveal the invitation underneath the opened envelope */
+.envelope-page.is-opened,
+.envelope-page.is-opened .envelope-scene,
+.envelope-page.is-opened .envelope-canvas,
+.envelope-scene.is-open {
+  background: transparent !important;
+}
